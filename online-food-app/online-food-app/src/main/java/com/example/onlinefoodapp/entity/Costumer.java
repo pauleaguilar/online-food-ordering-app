@@ -1,20 +1,22 @@
-package entity;
+package com.example.onlinefoodapp.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Getter;
+import lombok.Setter;
+
 
 import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.Date;
+
 
 @Entity
 @Table(name="costumer")
 @Data
+@Getter
+@Setter
 public class Costumer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
