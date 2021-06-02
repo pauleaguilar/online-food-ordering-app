@@ -9,22 +9,22 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="costumer")
+@Table(name="customer")
 @Data
 @Getter
 @Setter
-public class Costumer {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "costumer_fname")
-    private String costumer_fname;
+    @Column(name = "customer_fname")
+    private String customer_fname;
 
-    @Column(name = "costumer_lname")
-    private String costumer_lname;
+    @Column(name = "customer_lname")
+    private String customer_lname;
 
     @Column(name = "phone_number")
     private String phone_number;
