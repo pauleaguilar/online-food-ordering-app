@@ -1,5 +1,6 @@
 package com.example.onlinefoodapp.entity;
 
+import com.example.onlinefoodapp.dto.CartDto;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,8 +26,8 @@ public class Cart {
     @Column(name = "product_id")
     private Long productId;
 
-    @Column(name = "created_date")
-    private Date createdDate;
+    @Column(name = "date_created")
+    private Date dateCreated;
 
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id", insertable = false, updatable = false)
@@ -39,25 +40,4 @@ public class Cart {
     }
 
 
-    public Cart(CartDto cartDto, Product product,int userId){
-        this.userId = userId;
-        this.productId = cartDto.getProductId();
-        this.quantity = cartDto.getQuantity();
-        this.product = product;
-        this.createdDate = new Date();
-    }
-
-    public Cart(Long userId, Long productId, int quantity) {
-        this.userId = userId;
-        this.productId = productId;
-        this.createdDate = new Date();
-        this.quantity = quantity;
-    }
-
-    public Cart(CartDto cartDto, Product product) {
-        this.productId = cartDto.getProductId();
-        this.quantity = cartDto.getQuantity();
-        this.product = product;
-        this.createdDate = new Date();
-    }
 }
